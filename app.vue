@@ -19,36 +19,19 @@
   </v-app>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from 'vue'
+<script setup lang="ts">
 import { useTheme } from 'vuetify'
 import Navbar from './components/navigation/Navbar.vue'
 import ThemeToggler from './components/navigation/molecules/atoms/ThemeToggler.vue'
 import HamburgerMenu from './components/navigation/molecules/HamburgerMenu.vue'
 
-export default defineComponent({
-  components: {
-    Navbar,
-    ThemeToggler,
-    HamburgerMenu,
-  },
+const drawer = ref(false);
 
-  data() {
-    return {
-      drawer: false,
-    }
-  },
-
-  setup() {
-    const theme = useTheme()
-    const currentTheme = useCookie('theme')
-    currentTheme.value
-      ? (theme.global.name.value = currentTheme.value)
-      : (theme.global.name.value = 'myCustomLightTheme')
-
-    return {}
-  },
-})
+const theme = useTheme()
+const currentTheme = useCookie('theme')
+currentTheme.value
+  ? (theme.global.name.value = currentTheme.value)
+  : (theme.global.name.value = 'myCustomLightTheme')
 </script>
 
 <style scoped></style>

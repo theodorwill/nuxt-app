@@ -6,14 +6,14 @@
         height="200px"
         cover
       >
-      <v-overlay
-        :model-value="isHovering"
-        contained
-        scrim="black"
-        class="align-center justify-center"
-      >
-        <v-btn variant="flat">See more info</v-btn>
-      </v-overlay>
+        <v-overlay
+          :model-value="isHovering"
+          contained
+          scrim="black"
+          class="align-center justify-center"
+        >
+          <v-btn variant="flat">See more info</v-btn>
+        </v-overlay>
       </v-img>
       <v-card-title> Top western road trips </v-card-title>
       <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle>
@@ -26,20 +26,9 @@
   </v-hover>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from 'vue'
-
-export default defineComponent({
-  setup() {
-    const src = ref('https://cdn.vuetifyjs.com/images/cards/desert.jpg')
-    const overlay = ref(false)
-
-    return {
-      src,
-      overlay,
-    }
-  },
-})
+<script setup lang="ts">
+const src = ref('https://cdn.vuetifyjs.com/images/cards/desert.jpg')
+const overlay = ref(false)
 </script>
 
 <style scoped>

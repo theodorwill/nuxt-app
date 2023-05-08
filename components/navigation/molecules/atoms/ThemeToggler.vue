@@ -6,35 +6,28 @@
   </v-btn>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
 import { useTheme } from 'vuetify'
 
-export default defineComponent({
-  setup() {
-    const theme = useTheme()
-    const themeCookie = useCookie('theme')
+const theme = useTheme()
+const themeCookie = useCookie('theme')
 
-    const toggleTheme = () => {
-      theme.global.name.value = theme.global.current.value.dark
-        ? 'myCustomLightTheme'
-        : 'dark'
+const toggleTheme = () => {
+  theme.global.name.value = theme.global.current.value.dark
+    ? 'myCustomLightTheme'
+    : 'dark'
 
-      themeCookie.value = theme.global.name.value
-    }
+  themeCookie.value = theme.global.name.value
+}
 
-    const switchIcon = () => {
-      //change to switch if there are more than 2 themes
-      if (theme.global.name.value === 'dark') {
-        return 'mdi-weather-night'
-      } else {
-        return 'mdi-weather-sunny'
-      }
-    }
-
-    return { theme, toggleTheme, switchIcon }
-  },
-})
+const switchIcon = () => {
+  //change to switch if there are more than 2 themes
+  if (theme.global.name.value === 'dark') {
+    return 'mdi-weather-night'
+  } else {
+    return 'mdi-weather-sunny'
+  }
+}
 </script>
 
 <style scoped></style>

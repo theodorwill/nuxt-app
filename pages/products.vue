@@ -11,19 +11,8 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
 import ProductCard from '../components/store/molecules/ProductCard.vue'
-
-export default defineComponent({
-  components: {
-    ProductCard,
-  },
-
-  setup() {
-    return {}
-  },
-})
 </script>
 
 <style scoped></style>
