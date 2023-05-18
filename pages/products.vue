@@ -1,18 +1,24 @@
 <template>
   <div>
     <h2>Products</h2>
-    <v-container>
-      <v-row justify="center">
-        <v-col cols="12" xs="2" sm="6" md="4" l="3" xl="2" xxl="1" v-for="n in 9" :key="n">
-          <ProductCard />
-        </v-col>
-      </v-row>
-    </v-container>
+    <ProductList :url="url"/>
+
+    <v-btn
+      color="primary"
+      fab
+      fixed
+      bottom
+      right
+      >
+    </v-btn>
   </div>
 </template>
 
 <script setup lang="ts">
-import ProductCard from '../components/store/molecules/ProductCard.vue'
+import ProductList from '../components/ProductList.vue'
+
+const url = 'https://fakestoreapi.com/products'
+
 </script>
 
 <style scoped></style>

@@ -13,7 +13,7 @@
     </v-navigation-drawer>
     <v-main class="mx-4 mb-4">
       <v-container ma-0 pa-0 fill-height>
-        <router-view />
+        <NuxtPage />
       </v-container>
     </v-main>
   </v-app>
