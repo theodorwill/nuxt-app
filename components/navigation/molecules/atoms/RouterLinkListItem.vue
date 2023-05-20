@@ -1,5 +1,5 @@
 <template>
-  <v-list-item :value="text" active-color="primary" :to="to">
+  <v-list-item :value="text" color="primary" :to="to">
     <template v-slot:prepend>
       <v-icon :icon="icon"></v-icon>
     </template>

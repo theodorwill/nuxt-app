@@ -47,8 +47,11 @@
 </template>
 
 <script setup lang="ts">
-const src = ref('https://cdn.vuetifyjs.com/images/cards/desert.jpg')
+import { useCounterStore } from '@/stores/counter'
 
+const storeCounter = useCounterStore()
+
+const src = ref('https://cdn.vuetifyjs.com/images/cards/desert.jpg')
 const count = ref(1)
 
 const increment = () => {
@@ -64,7 +67,7 @@ const decrement = () => {
 const props = defineProps({
   id: {
     required: false,
-    type: String,
+    type: Number,
   },
   title: {
     required: false,

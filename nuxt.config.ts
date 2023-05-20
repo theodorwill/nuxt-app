@@ -4,6 +4,9 @@ export default defineNuxtConfig({
         'vuetify/styles/main.sass',
         '@mdi/font/css/materialdesignicons.min.css'
     ],
+    modules: [
+        '@pinia/nuxt',
+    ],
     build: {
         transpile: ['vuetify']
     },

@@ -7,7 +7,7 @@ interface Job {
 }
 
 interface Product {
-    id: string,
+    id: number,
     title: string,
     price: number,
     category: string,
