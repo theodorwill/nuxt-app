@@ -13,7 +13,7 @@
           scrim="black"
           class="align-center justify-center"
         >
-          <v-btn variant="flat">See more info</v-btn>
+          <v-btn :to="`/products/${id}`" variant="flat">See more info</v-btn>
         </v-overlay>
         <template v-slot:placeholder>
           <div class="d-flex align-center justify-center fill-height">
@@ -27,7 +27,7 @@
       <v-card-title>{{ title ? title : 'loading...' }}</v-card-title>
       <v-card-subtitle>{{ description ? description : 'loading...' }}</v-card-subtitle>
       <v-card-actions>
-        <v-btn color="orange-lighten-2" variant="text"> Explore </v-btn>
+      <slot/>
         <v-spacer></v-spacer>
         <v-btn>Buy</v-btn>
       </v-card-actions>
@@ -40,6 +40,10 @@ const src = ref('https://cdn.vuetifyjs.com/images/cards/desert.jpg')
 const overlay = ref(false)
 
 const props = defineProps({
+  id: {
+    required: true,
+    type: String,
+  },
   title: {
     required: false,
     type: String,
