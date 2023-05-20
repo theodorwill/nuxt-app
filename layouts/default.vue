@@ -12,7 +12,7 @@
         <HamburgerMenu />
       </v-navigation-drawer>
       <v-main class="mx-4 mb-4">
-        <v-container class="primary fill-height" ma-0 pa-0>
+        <v-container max-width="1440" class="primary fill-height" fluid ma-0 pa-0>
             <slot />
         </v-container>
       </v-main>
