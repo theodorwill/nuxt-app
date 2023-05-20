@@ -1,24 +1,25 @@
 <template>
   <ProductDetails
-    :id="product.id"
-    :title="product.title"
-    :price="product.price"
-    :category="product.category"
-    :description="product.description"
-    :image="product.image"
+    :id="data?.id"
+    :title="data?.title"
+    :price="data?.price"
+    :category="data?.category"
+    :description="data?.description"
+    :image="data?.image"
   >
   </ProductDetails>
 </template>
 
 <script setup lang="ts">
 import ProductDetails from '~/components/ProductDetails.vue'
+import { Product } from '~/types/Types'
 
 const { id } = useRoute().params
 const uri = `https://fakestoreapi.com/products/${id}`
 
-const { data: product } = await useFetch(uri, { key: id?.toString() })
+const { data } = await useFetch<Product>(uri, { key: id?.toString() })
 
-if (!product.value) {
+if (!data.value) {
   throw createError({ statusCode: 404, statusMessage: 'Product not found' })
 }
 </script>

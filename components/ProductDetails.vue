@@ -1,5 +1,5 @@
 <template>
-  <v-card max-width="1440"  class="mx-auto fill-height" color="transparent" dense fluid>
+  <v-card max-width="1440"  class="mx-auto fill-height" color="transparent" dense fluid flat>
     <v-row class="fill-height" dense fluid>
       <v-col cols="12" xs="12" sm="12" md="12" l="6" xl="6" xxl="6">
         <v-card class="fill-height" color="white" dense fluid>
@@ -13,7 +13,7 @@
       </v-col>
 
       <v-col cols="12" xs="12" sm="12" md="12" l="6" xl="6" xxl="6">
-        <v-card color="#1F7087" class="fill-height" dense fluid>
+        <v-card class="fill-height" dense fluid>
           <v-card-item>
             <div>
               <div class="text-overline mb-1">
@@ -42,7 +42,7 @@ const src = ref('https://cdn.vuetifyjs.com/images/cards/desert.jpg')
 
 const props = defineProps({
   id: {
-    required: true,
+    required: false,
     type: String,
   },
   title: {
