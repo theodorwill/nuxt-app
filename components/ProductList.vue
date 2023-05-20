@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <v-container>
-      <v-row justify="center">
+    <v-card max-width="1440"  class="mx-auto fill-height" color="transparent" fluid justify="center" align="center" >
+      <v-row class="fill-height" fluid dense>
         <v-col
           cols="12"
           xs="2"
@@ -23,8 +22,7 @@
           </ProductCard>
         </v-col>
       </v-row>
-    </v-container>
-  </div>
+    </v-card> 
 </template>
 
 <script setup lang="ts">

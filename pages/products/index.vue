@@ -1,9 +1,5 @@
-<template>
-  <div>
-    <h2>Products</h2>
+<template> 
     <ProductList :url="url" />
-    
-  </div>
 </template>
 
 <script setup lang="ts">
