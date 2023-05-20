@@ -39,7 +39,7 @@ currentTheme.value
 
   h3 {
     font-size: 1.8rem;
-    color: rgb(var(--v-theme-secondary));
+    color: rgb(var(--v-theme-secondary-darken-1));
   }
 }
 </style>

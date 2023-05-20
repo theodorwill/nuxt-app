@@ -1,6 +1,6 @@
 <template>
   <v-btn :to="to">
-    <v-icon>
+    <v-icon v-if="icon">
       {{ icon }}
     </v-icon>
     {{ text }}
