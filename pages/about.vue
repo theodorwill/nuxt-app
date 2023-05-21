@@ -1,22 +1,13 @@
 <template>
     <div>
-        <h2>About</h2>
+        <h1>About</h1>
     </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
 
-export default defineComponent({
-    
-    setup () {
-        
-
-        return {}
-    }
-})
 </script>
 
 <style scoped>
-
+    
 </style>
