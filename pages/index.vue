@@ -1,21 +1,25 @@
 <template>
-  <div>
-    <v-select
-      v-model="order"
-      class="w-25"
-      :items="sort"
-      label="Sort by:"
-      hide-details="auto"
-      variant="underlined"
-      @update:modelValue="order = $event"
-    ></v-select>
-    <JobList :jobs="jobs" :order="order" />
-  </div>
+  
+        <v-carousel height="400" fluid cycle hide-delimiters>
+         
+           <v-carousel-item v-for="product in fProducts" v-bind:src="product.image" cover>
+             
+           </v-carousel-item>
+         
+        </v-carousel>
+
+     
 </template>
 
 <script setup lang="ts">
 import JobList from '../components/JobList.vue'
 import { OrderTerm, Job } from '../types/Types'
+import { useFeaturedStore } from '~/stores/featuredStore';
+
+const featuredStore = <any>useFeaturedStore()
+featuredStore.getFeaturedProducts()
+
+const fProducts = featuredStore.featuredProducts
 
 const sort = ['title', 'salary', 'location']
 const order = ref<OrderTerm>('title')
