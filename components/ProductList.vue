@@ -1,9 +1,9 @@
 <template>
     
-      <v-row class="fill-height" fluid>
+      <v-row fluid>
         <v-col
           cols="12"
-          xs="6"
+          xs="12"
           sm="4"
           md="4"
           l="3"

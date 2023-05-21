@@ -9,15 +9,7 @@
   >
     <v-list v-if="cartStore.cart" class="fill-height" fluid dense>
       <v-list-item v-for="product in cartStore.cart">
-        <CartCard
-          :id="product.id"
-          :title="product.title"
-          :image="product.image"
-          :description="product.description"
-          :category="product.category"
-          :price="product.price"
-          :quantity="product.quantity"
-        >
+        <CartCard :product="product">
           <v-btn @click="cartStore.deleteFromCart(product)" variant="outlined">
             -
           </v-btn>

@@ -17,7 +17,7 @@ import { OrderTerm, Job } from '../types/Types'
 import { useFeaturedStore } from '~/stores/featuredStore';
 
 const featuredStore = <any>useFeaturedStore()
-featuredStore.getFeaturedProducts()
+
 
 const fProducts = featuredStore.featuredProducts
 
