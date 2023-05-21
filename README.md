@@ -25,6 +25,19 @@ Start the development server on `http://localhost:3000`
 npm run dev
 ```
 
+## Test server for data store
+
+Install Json-server:
+
+```bash
+npm install -g json-server
+```
+
+Run Json-server(from directory root):
+```bash
+json-server -w -p 4000 ./data/db.json
+```
+
 ## Production
 
 Build the application for production:
