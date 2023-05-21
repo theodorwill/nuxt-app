@@ -42,7 +42,7 @@ const overlay = ref(false)
 const props = defineProps({
   id: {
     required: true,
-    type: String,
+    type: Number,
   },
   title: {
     required: false,

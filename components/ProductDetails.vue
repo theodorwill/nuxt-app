@@ -35,9 +35,9 @@
           </v-card-item>
 
           <v-card-actions>
-            <v-btn @click="increment" variant="outlined"> + </v-btn>
-            <div>{{ count }}</div>
-            <v-btn @click="decrement" variant="outlined"> - </v-btn>
+            <v-btn @click="" variant="outlined"> + </v-btn>
+            <div></div>
+            <v-btn @click="" variant="outlined"> - </v-btn>
             <v-btn variant="outlined"> Button </v-btn>
           </v-card-actions>
         </v-card>
@@ -47,22 +47,7 @@
 </template>
 
 <script setup lang="ts">
-import { useCounterStore } from '@/stores/counter'
-
-const storeCounter = useCounterStore()
-
 const src = ref('https://cdn.vuetifyjs.com/images/cards/desert.jpg')
-const count = ref(1)
-
-const increment = () => {
-  count.value++
-}
-
-const decrement = () => {
-  if (count.value > 1) {
-    count.value--
-  }
-}
 
 const props = defineProps({
   id: {

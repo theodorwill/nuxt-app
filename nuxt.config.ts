@@ -1,11 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    modules: [
+        '@pinia/nuxt',
+        '@pinia-plugin-persistedstate/nuxt'
+    ],
     css: [
         'vuetify/styles/main.sass',
         '@mdi/font/css/materialdesignicons.min.css'
-    ],
-    modules: [
-        '@pinia/nuxt',
     ],
     build: {
         transpile: ['vuetify']

@@ -18,7 +18,7 @@
             :image="p['image']"
             :description="p['description']"
           >
-            <RouterLinkBtn :to="`/products/product/${p['id']}`" :text="'see more'" />
+            <RouterLinkBtn :to="`/products/${p['id']}`" :text="'see more'" />
           </ProductCard>
         </v-col>
       </v-row>
