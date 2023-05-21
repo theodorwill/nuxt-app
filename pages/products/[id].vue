@@ -1,13 +1,5 @@
 <template>
-  <ProductDetails
-    :id="data?.id"
-    :title="data?.title"
-    :price="data?.price"
-    :category="data?.category"
-    :description="data?.description"
-    :image="data?.image"
-  >
-  </ProductDetails>
+  <ProductDetails :product="(data as Product)"> </ProductDetails>
 </template>
 
 <script setup lang="ts">

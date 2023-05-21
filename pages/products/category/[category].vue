@@ -7,7 +7,7 @@ import ProductList from '~/components/ProductList.vue'
 const { category } = useRoute().params
 
 
-const uri = `https://fakestoreapi.com/products/category/men's clothing`
+const uri = `https://fakestoreapi.com/products/category/${category}`
 </script>
 
 <style scoped></style>

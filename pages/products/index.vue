@@ -1,5 +1,5 @@
-<template> 
-    <ProductList :url="url" />
+<template>
+  <ProductList :url="url" />
 </template>
 
 <script setup lang="ts">

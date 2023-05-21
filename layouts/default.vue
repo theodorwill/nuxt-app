@@ -5,6 +5,7 @@
           <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
         </template>
         <template v-slot:right>
+          <RouterLinkBtn to="/cart" :icon="'mdi-cart'" :text="cartStore.cartQuantity"/>
           <ThemeToggler />
         </template>
       </Navbar>
@@ -24,6 +25,12 @@
   import Navbar from '../components/navigation/Navbar.vue'
   import ThemeToggler from '../components/navigation/molecules/atoms/ThemeToggler.vue'
   import HamburgerMenu from '../components/navigation/molecules/HamburgerMenu.vue'
+  import RouterLinkBtn from '~/components/navigation/molecules/atoms/RouterLinkBtn.vue'
+  import { useCartStore } from '@/stores/cartStore'
+
+  const cartStore = <any>useCartStore()
+  cartStore.getCart()
+
   
   const drawer = ref(false);
   
