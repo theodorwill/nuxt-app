@@ -9,16 +9,13 @@
           l="3"
           xl="2"
           xxl="1"
-          v-for="p in products"
-          :key="p"
+          v-for="product in products"
+          :key="product"
         >
           <ProductCard
-            :id="p['id']"
-            :title="p['title']"
-            :image="p['image']"
-            :description="p['description']"
+            :product="product"
           >
-            <RouterLinkBtn :to="`/products/${p['id']}`" :text="'see more'" />
+            <RouterLinkBtn :to="`/products/${product['id']}`" :text="'see more'" />
           </ProductCard>
         </v-col>
       </v-row>

@@ -9,7 +9,7 @@
           <v-card-text>{{ quantity * price }}</v-card-text>
 
           <v-card-actions>
-            <v-btn class="ms-2" variant="outlined" size="small"> Remove </v-btn>
+            <slot/>
           </v-card-actions>
         </div>
 
@@ -24,6 +24,9 @@
 </template>
 
 <script setup lang="ts">
+import { useCartStore } from '@/stores/cartStore';
+
+
 const src = ref('https://cdn.vuetifyjs.com/images/cards/desert.jpg')
 
 const props = defineProps({

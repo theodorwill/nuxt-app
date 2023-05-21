@@ -28,7 +28,7 @@
   import RouterLinkBtn from '~/components/navigation/molecules/atoms/RouterLinkBtn.vue'
   import { useCartStore } from '@/stores/cartStore'
 
-  const cartStore = useCartStore()
+  const cartStore = <any>useCartStore()
   cartStore.getCart()
 
   

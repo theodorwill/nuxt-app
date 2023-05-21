@@ -11,8 +11,8 @@
         <v-card class="fill-height" color="white" fluid>
           <v-img
             class="fill-height"
-            v-bind:src="image ? image : src"
-            v-bind:lazy-src="image ? image : src"
+            v-bind:src="product.image ? product.image : src"
+            v-bind:lazy-src="product.image ? product.image : src"
             fluid
           ></v-img>
         </v-card>
@@ -23,22 +23,24 @@
           <v-card-item>
             <div>
               <div class="text-overline mb-1">
-                {{ category ? category : 'loading...' }}
+                {{ product.category ? product.category : 'loading...' }}
               </div>
               <div class="text-h6 mb-1">
-                {{ title ? title : 'loading...' }}
+                {{ product.title ? product.title : 'loading...' }}
               </div>
               <div class="text-caption">
-                {{ description ? description : 'loading...' }}
+                {{ product.description ? product.description : 'loading...' }}
               </div>
             </div>
           </v-card-item>
 
           <v-card-actions>
-            <v-btn @click="" variant="outlined"> + </v-btn>
-            <div></div>
-            <v-btn @click="" variant="outlined"> - </v-btn>
-            <v-btn variant="outlined"> Button </v-btn>
+            <v-btn @click="cartStore.updateQuantity(product, 'decrease')" variant="outlined"> - </v-btn>
+            <div>{{ cartStore.getQuantity(product.id) }}</div>
+            <v-btn @click="cartStore.updateQuantity(product, 'increase')" variant="outlined"> + </v-btn>
+            <v-btn @click="" variant="outlined">
+              Button
+            </v-btn>
           </v-card-actions>
         </v-card>
       </v-col>
@@ -47,32 +49,16 @@
 </template>
 
 <script setup lang="ts">
+import { useCartStore } from '~/stores/cartStore'
+
+const cartStore = <any>useCartStore()
+
 const src = ref('https://cdn.vuetifyjs.com/images/cards/desert.jpg')
 
 const props = defineProps({
-  id: {
-    required: false,
-    type: Number,
-  },
-  title: {
-    required: false,
-    type: String,
-  },
-  price: {
-    required: false,
-    type: Number,
-  },
-  category: {
-    required: false,
-    type: String,
-  },
-  description: {
-    required: false,
-    type: String,
-  },
-  image: {
-    required: false,
-    type: String,
+  ['product']: {
+    required: true,
+    type: Object,
   },
 })
 </script>
