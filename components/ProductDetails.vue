@@ -1,11 +1,4 @@
 <template>
-  <v-card
-    max-width="1440"
-    class="mx-auto fill-height"
-    color="transparent"
-    fluid
-    flat
-  >
     <v-row class="fill-height" fluid>
       <v-col cols="12" xs="12" sm="12" md="6" l="6" xl="6" xxl="6" fluid>
         <v-card class="fill-height" color="white" fluid>
@@ -38,14 +31,13 @@
             <v-btn @click="cartStore.updateQuantity(product, 'decrease')" variant="outlined"> - </v-btn>
             <div>{{ cartStore.getQuantity(product.id) }}</div>
             <v-btn @click="cartStore.updateQuantity(product, 'increase')" variant="outlined"> + </v-btn>
-            <v-btn @click="" variant="outlined">
+            <v-btn @click="cartStore.a" variant="outlined">
               Button
             </v-btn>
           </v-card-actions>
         </v-card>
       </v-col>
     </v-row>
-  </v-card>
 </template>
 
 <script setup lang="ts">
