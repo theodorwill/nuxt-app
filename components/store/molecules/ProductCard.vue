@@ -1,6 +1,6 @@
 <template>
   <v-hover v-slot="{ isHovering, props }">
-    <v-card v-bind="props" class="mx-auto" min-width="200" max-width="344">
+    <v-card v-bind="props" class="mx-auto" min-width="100" max-width="344">
       <v-img
         v-bind:src="product.image ? product.image : src"
         v-bind:lazy-src="product.image ? product.image : src"

@@ -17,7 +17,7 @@
       <HamburgerMenu />
     </v-navigation-drawer>
     <v-main class="mx-4 mb-4">
-      <v-container max-width="1440" class="primary fill-height" fluid ma-0 pa-0>
+      <v-container max-width="1440" class="primary fill-height align-start justify-center" fluid ma-0 pa-0>
         <slot />
       </v-container>
     </v-main>
@@ -26,14 +26,18 @@
 
 <script setup lang="ts">
 import { useTheme } from 'vuetify'
-import Navbar from '../components/navigation/Navbar.vue'
-import ThemeToggler from '../components/navigation/molecules/atoms/ThemeToggler.vue'
-import HamburgerMenu from '../components/navigation/molecules/HamburgerMenu.vue'
-import RouterLinkBtn from '~/components/navigation/molecules/atoms/RouterLinkBtn.vue'
+import Navbar from '@/components/navigation/Navbar.vue'
+import ThemeToggler from '@/components/navigation/molecules/atoms/ThemeToggler.vue'
+import HamburgerMenu from '@/components/navigation/molecules/HamburgerMenu.vue'
+import RouterLinkBtn from '@/components/navigation/molecules/atoms/RouterLinkBtn.vue'
 import { useCartStore } from '@/stores/cartStore'
+import { useFeaturedStore } from '@/stores/featuredStore'
 
 const cartStore = <any>useCartStore()
+const featuredStore = <any>useFeaturedStore()
+
 cartStore.getCart()
+featuredStore.getFeaturedProducts()
 
 const drawer = ref(false)
 
