@@ -1,19 +1,15 @@
 <template>
-  <div class="container">
+  <div class="counter-container">
     <h4>Quantity</h4>
-    <div class="counter-container">
-      <v-btn
-        @click="cartStore.updateQuantity(product, 'decrease')"
-        v-bind:variant="checkQuantity(product)"
-        >-</v-btn
-      >
-      <h3>{{ cartStore.getQuantity(product.id) }}</h3>
-      <v-btn
-        @click="cartStore.updateQuantity(product, 'increase')"
-        variant="flat"
-        >+</v-btn
-      >
-    </div>
+    <v-btn
+      @click="cartStore.updateQuantity(product, 'decrease')"
+      v-bind:variant="checkQuantity(product)"
+      >-</v-btn
+    >
+    <h3>{{ cartStore.getQuantity(product.id) }}</h3>
+    <v-btn @click="cartStore.updateQuantity(product, 'increase')" variant="flat"
+      >+</v-btn
+    >
   </div>
 </template>
 

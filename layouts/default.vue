@@ -13,8 +13,7 @@
         />
         <RouterLinkBtn
           to="/account/profile"
-          :icon="'mdi-cart'"
-          :text="'account'"
+          :icon="'mdi-account-circle'"
         />
 
       </template>

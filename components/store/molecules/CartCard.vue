@@ -1,26 +1,25 @@
 <template>
-    <v-card fluid>
-      <div class="d-flex flex-no-wrap justify-space-between">
-        <div>
-          <v-card-title class="text-h5">{{ product.category }}</v-card-title>
+    <v-card min-width="200" fluid>
+     
+        
+          <v-card-title >{{ product.title }}</v-card-title>
 
-          <v-card-subtitle>{{ product.title }}</v-card-subtitle>
+          <v-card-subtitle>{{ product.category }}</v-card-subtitle>
 
           <v-card-text>{{ product.quantity * product.price }}</v-card-text>
 
-          <v-card-actions>
+          
             <slot/>
             <QuantitySelector :product="product" />
-          </v-card-actions>
-        </div>
+         
 
-        <v-avatar class="ma-3" size="125" rounded="0">
+        <v-avatar class="ma-3" size="20%" rounded="0">
           <v-img
             v-bind:src="product.image ? product.image : src"
             v-bind:lazy-src="product.image ? product.image : src"
           ></v-img>
         </v-avatar>
-      </div>
+      
     </v-card>
 </template>
 
