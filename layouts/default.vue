@@ -5,12 +5,18 @@
         <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       </template>
       <template v-slot:right>
+        <ThemeToggler />
         <RouterLinkBtn
           to="/cart"
           :icon="'mdi-cart'"
           :text="cartStore.cartQuantity"
         />
-        <ThemeToggler />
+        <RouterLinkBtn
+          to="/account/profile"
+          :icon="'mdi-cart'"
+          :text="'account'"
+        />
+
       </template>
     </Navbar>
     <v-navigation-drawer v-model="drawer" temporary absolute>

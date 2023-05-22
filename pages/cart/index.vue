@@ -19,7 +19,7 @@
         <v-card fluid>
           <v-card-title>Total: {{ cartStore.cartTotal }}</v-card-title>
           <v-card-actions>
-            <v-btn>checkout</v-btn>
+            <v-btn @click="checkout">checkout</v-btn>
           </v-card-actions>
         </v-card>
       </v-list-item>
@@ -31,8 +31,22 @@
 <script setup lang="ts">
 import CartCard from '../../components/store/molecules/CartCard.vue'
 import { useCartStore } from '../../stores/cartStore'
+import { useOrderStore } from '../../stores/orderStore'
 
 const cartStore = <any>useCartStore()
+const orderStore = <any>useOrderStore()
+const client = useSupabaseClient()
+
+
+const checkout = async() => {
+  
+  
+  const { data: { user } } = await client.auth.getUser()
+
+  console.log(user?.email)
+
+  orderStore.createOrder(user?.email, cartStore.cartTotal, cartStore.cart)
+} 
 </script>
 
 <style lang="scss" scoped></style>
