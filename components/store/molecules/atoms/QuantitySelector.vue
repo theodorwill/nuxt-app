@@ -1,15 +1,18 @@
 <template>
   <div class="counter-container">
-    <h4>Quantity</h4>
     <v-btn
+      icon="mdi-minus"
       @click="cartStore.updateQuantity(product, 'decrease')"
       v-bind:variant="checkQuantity(product)"
-      >-</v-btn
-    >
+      density="compact"
+    ></v-btn>
     <h3>{{ cartStore.getQuantity(product.id) }}</h3>
-    <v-btn @click="cartStore.updateQuantity(product, 'increase')" variant="flat"
-      >+</v-btn
-    >
+    <v-btn
+      icon="mdi-plus"
+      @click="cartStore.updateQuantity(product, 'increase')"
+      variant="flat"
+      density="compact"
+    ></v-btn>
   </div>
 </template>
 
@@ -25,7 +28,6 @@ const props = defineProps({
   },
 })
 
-//function that checks if quantity is 0 and returns tonal variant if true
 const checkQuantity = (product: any) => {
   if (cartStore.getQuantity(product.id) === 1) {
     return 'tonal'
@@ -36,14 +38,6 @@ const checkQuantity = (product: any) => {
 </script>
 
 <style lang="scss" scoped>
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  margin: 0;
-}
 .counter-container {
   display: flex;
   align-items: center;
@@ -55,15 +49,6 @@ const checkQuantity = (product: any) => {
   h3 {
     margin: 0;
     padding: 0;
-  }
-
-  .v-btn {
-    min-width: 0;
-    width: 2rem;
-    height: 2rem;
-    padding: 0;
-    margin: 0;
-    border-radius: 50%;
   }
 }
 </style>
