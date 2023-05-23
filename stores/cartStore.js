@@ -42,6 +42,19 @@ export const useCartStore = defineStore('cart', {
       })
     },
 
+    async clearCart() {
+      const ids = this.cart.map(p => p.id)
+
+      for (const id of ids) {
+        await $fetch(`http://localhost:4000/cart/${id}`, {
+          method: 'DELETE'
+        })
+        await new Promise(resolve => setTimeout(resolve, 100))
+      }
+
+      this.cart = []
+    },
+
     async updateQuantity(product, action) {
       let updatedProduct;
 
@@ -94,6 +107,6 @@ export const useCartStore = defineStore('cart', {
           body: JSON.stringify({ ...product, quantity: 1 })
         })
       }
-    }
+    },
   }
 })

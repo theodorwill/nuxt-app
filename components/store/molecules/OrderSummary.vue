@@ -20,7 +20,8 @@
       <p class="text-primary">${{ totalPrice }}</p>
     </div>
     <div class="py-4 px-4">
-      <v-btn width="100%">checkout</v-btn>
+      <slot/>
+      
     </div>
   </v-card>
 </template>
