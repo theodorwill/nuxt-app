@@ -1,5 +1,5 @@
 <template>
-  <v-btn :to="to">
+  <v-btn icon="" :to="to" density="comfortable">
     <v-icon v-if="icon">
       {{ icon }}
     </v-icon>

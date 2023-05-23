@@ -1,30 +1,28 @@
 <template>
-    <v-card max-width="1440"  class="mx-auto fill-height" color="transparent" fluid justify="center" align="center" >
-      <v-row class="fill-height" fluid dense>
+    
+      <v-row fluid>
         <v-col
           cols="12"
-          xs="2"
-          sm="6"
+          xs="12"
+          sm="4"
           md="4"
           l="3"
-          xl="2"
-          xxl="1"
+          xl="3"
+          xxl="3"
           v-for="product in products"
           :key="product"
         >
           <ProductCard
             :product="product"
           >
-            <RouterLinkBtn :to="`/products/${product['id']}`" :text="'see more'" />
           </ProductCard>
         </v-col>
       </v-row>
-    </v-card> 
+     
 </template>
 
 <script setup lang="ts">
 import ProductCard from './store/molecules/ProductCard.vue'
-import RouterLinkBtn from './navigation/molecules/atoms/RouterLinkBtn.vue'
 
 const props = defineProps({
   url: {

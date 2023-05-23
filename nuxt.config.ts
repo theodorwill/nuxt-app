@@ -2,7 +2,8 @@
 export default defineNuxtConfig({
     modules: [
         '@pinia/nuxt',
-        '@pinia-plugin-persistedstate/nuxt'
+        '@pinia-plugin-persistedstate/nuxt',
+        '@nuxtjs/supabase'
     ],
     css: [
         'vuetify/styles/main.sass',
