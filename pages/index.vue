@@ -1,8 +1,12 @@
 <template>
+  <v-row>
   <v-carousel height="400" fluid cycle hide-delimiters>
     <CarouselPromo v-for="product in fProducts" :product="product">
     </CarouselPromo>
   </v-carousel>
+  <div class="mx-auto color-primary spacing-header"><h1>Products</h1></div>
+  <ProductList :url="url"></ProductList>
+</v-row>
 </template>
 
 <script setup lang="ts">
@@ -10,6 +14,9 @@ import CarouselPromo from '~/components/store/molecules/CarouselPromo.vue'
 import JobList from '../components/JobList.vue'
 import { OrderTerm, Job } from '../types/Types'
 import { useFeaturedStore } from '~/stores/featuredStore'
+import ProductList from '../components/ProductList.vue'
+
+const url = 'https://fakestoreapi.com/products'
 
 const featuredStore = <any>useFeaturedStore()
 
@@ -47,4 +54,20 @@ const jobs = ref<Job[]>([
 ])
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.spacing-header {
+  margin: 1rem 0;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  justify-content: center;
+  background-color: rgb(var(--v-theme-primary));
+  height: 100px;
+  width: 100%;
+
+  h1 {
+    text-align: center;
+    color:white
+  }
+}
+</style>
